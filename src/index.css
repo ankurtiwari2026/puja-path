@@ -1,13 +1,230 @@
-body {
+/* ===== Global ===== */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff7ed;
+  color: #3f2a1d;
+  line-height: 1.6;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  background: linear-gradient(135deg, #b45309, #92400e);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #92400e, #78350f);
+}
+
+/* ===== Navbar ===== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.nav h2 {
+  color: #92400e;
+  font-weight: 700;
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #fff7ed, #fde68a);
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* ===== Section Headings ===== */
+section h2 {
+  text-align: center;
+  margin: 60px 0 30px;
+  font-size: 30px;
+  color: #92400e;
+}
+
+/* ===== Services ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 60px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* ===== Booking Form ===== */
+.form-box {
+  max-width: 900px;
+  margin: 60px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.form-box form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.form-box textarea {
+  grid-column: span 2;
+  resize: none;
+  height: 100px;
+}
+
+.form-box button {
+  grid-column: span 2;
+  margin-top: 10px;
+}
+
+/* ===== Gallery ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 60px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Testimonials ===== */
+.review {
+  max-width: 700px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 25px;
+  border-left: 6px solid #b45309;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.review strong {
+  color: #92400e;
+}
+
+.review p {
+  margin-top: 8px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #78350f;
+  color: white;
+  padding: 50px 60px 20px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #fde68a;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.footer-section ul li:hover {
+  color: #fde68a;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #a16207;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav {
+    padding: 20px;
+  }
+
+  .cards,
+  .gallery {
+    padding: 0 20px;
+  }
+
+  .form-box form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-box textarea,
+  .form-box button {
+    grid-column: span 1;
+  }
 }
